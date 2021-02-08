@@ -7,6 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DevicesComponent } from './devices/devices.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
@@ -17,6 +22,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +32,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    DashboardComponent,
+    DevicesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,11 +47,19 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    MatTableModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'devices', component: DevicesComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
     ])
+   
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
