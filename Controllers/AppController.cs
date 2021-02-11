@@ -14,20 +14,28 @@ namespace Convergence.Controllers
     [Authorize]
     [ApiController]
     [Route("[controller]")]
-    public class AppController : ControllerBase
+    public class AppController : Controller
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<AppController> _logger;
+        
+        private readonly IMailService _mailService;
+        private readonly ConvergenceContext _ctx;
 
-        public AppController(ILogger<AppController> logger)
+        public AppController(IMailService mailService, ConvergenceContext ctx)
         {
-            _logger = logger;
+            _mailService = mailService;
+            _ctx = ctx;
         }
+        public IActionResult Index()
+        {
+            var results = _ctx.Devices.ToList();
+                return View();
 
+        }
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
