@@ -5,22 +5,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Convergence.Services;
+using Convergence.ViewModels;
+using Convergence.Data;
 
 namespace Convergence.Controllers
 {
     [Authorize]
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class AppController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<AppController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public AppController(ILogger<AppController> logger)
         {
             _logger = logger;
         }

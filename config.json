@@ -1,0 +1,9 @@
+{
+    "Colors": {
+        "Favourite": "blue"
+
+    },
+    "ConnectionStrings": {
+        "ConvergenceConnectionString" : "server=(localdb)\\ProjectsV13;database=ConvergenceDb;Integrated Security=true;MultipleActiveResultSets=true;"
+    }
+}
