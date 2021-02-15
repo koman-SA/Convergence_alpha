@@ -41,6 +41,8 @@ namespace Convergence
         {
             builder.Sources.Clear();
             builder.AddJsonFile("config.json", false, true)
+                .AddJsonFile("appsettings.json", false, true)
+                .AddJsonFile($"appsettings.{(ctx.HostingEnvironment.IsDevelopment() ? "Development" : "Production")}.json", false, true)
                 .AddEnvironmentVariables();
         }
 
