@@ -4,6 +4,17 @@
 
     },
     "ConnectionStrings": {
-        "ConvergenceConnectionString" : "server=(localdb)\\ProjectsV13;database=ConvergenceDb;Integrated Security=true;MultipleActiveResultSets=true;"
+        "ConvergenceConnectionString": "server=(localdb)\\ProjectsV13;database=ConvergenceDb;Integrated Security=true;MultipleActiveResultSets=true;"
+    },
+    "IdentityServer" :
+    {
+        "Clients" : {
+            "Convergence" : {
+                "Profile" : "IdentityServerSPA"  
+            }
+        }
+
+
     }
+
 }

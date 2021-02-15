@@ -12,8 +12,8 @@ namespace Convergence.Data
     public class ConvergenceSeeder
     {
         private readonly ConvergenceContext _ctx;
-        private readonly IHostingEnvironment _hosting;
-        public ConvergenceSeeder(ConvergenceContext ctx, IHostingEnvironment hosting)
+        private readonly IWebHostEnvironment _hosting;
+        public ConvergenceSeeder(ConvergenceContext ctx, IWebHostEnvironment hosting)
         {
             _ctx = ctx;
             _hosting = hosting;
@@ -28,6 +28,7 @@ namespace Convergence.Data
                 var filepath = Path.Combine(_hosting.ContentRootPath, "Data/art.json");
                 var json = File.ReadAllText(filepath);
                 var devices = JsonConvert.DeserializeObject<IEnumerable<Device>>(json);
+                var problems = devices.Where(x => x.Id == null).ToList();
                 _ctx.Devices.AddRange(devices);
 
 

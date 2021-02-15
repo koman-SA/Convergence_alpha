@@ -10,22 +10,25 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Options;
 using Convergence.Data.Entities;
 
+
+
 namespace Convergence.Data
 {
-    public class ConvergenceContext : DbContext
+    public class ConvergenceContext : ApiAuthorizationDbContext<ApplicationUser>
     {
 
-        public ConvergenceContext(DbContextOptions<ConvergenceContext> options): base(options)
+        public ConvergenceContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
+
         }
 
         public DbSet<Device> Devices { get; set; }
-
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Device>()
+            modelBuilder.Entity<Device>() 
                 .HasData(new Device()
                 {
                     Id = 1,

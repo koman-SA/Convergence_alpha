@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Convergence.Migrations
 {
     [DbContext(typeof(ConvergenceContext))]
-    [Migration("20210211092750_SeedData")]
-    partial class SeedData
+    [Migration("20210212160454_InitialDb")]
+    partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

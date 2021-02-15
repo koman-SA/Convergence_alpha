@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Design;
 
+
 namespace Convergence
 {
     public class Startup
@@ -24,20 +25,39 @@ namespace Convergence
             _config = config;
 
         }
-
+        public IConfiguration Configuration { get; }
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ConvergenceContext>(cfg =>
+            services.AddDbContext<ConvergenceContext>(options =>
             {
-                cfg.UseSqlServer(_config.GetConnectionString("ConvergenceConnectionString"));
+                options.UseSqlServer(_config.GetConnectionString("ConvergenceConnectionString"));
             });
-
+            
             services.AddTransient<ConvergenceSeeder>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            
+            /*services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)*/
+            services.AddDefaultIdentity<ApplicationUser>(options => {
+                bool test = true;
+                options.SignIn.RequireConfirmedAccount = true;
+                test = false;
+            })
+
+            .AddEntityFrameworkStores<ConvergenceContext>();
+            services.AddIdentityServer()
+                  .AddApiAuthorization<ApplicationUser, ConvergenceContext>();
+
+          
+
+            services.AddAuthentication()
+              .AddIdentityServerJwt();
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+
+
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

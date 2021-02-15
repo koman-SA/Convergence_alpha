@@ -10,7 +10,8 @@ namespace Convergence.Migrations
                 name: "Devices",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -18,6 +19,11 @@ namespace Convergence.Migrations
                 {
                     table.PrimaryKey("PK_Devices", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Devices",
+                columns: new[] { "Id", "Name", "Type" },
+                values: new object[] { 1, "Test", "Desktop" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
