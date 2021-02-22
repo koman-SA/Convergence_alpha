@@ -17,30 +17,32 @@ namespace Convergence.Controllers
     [Route("[controller]")]
     public class AppController : Controller
     {
-      private static readonly string[] Summaries = new[]
-      {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-      };
         private readonly ILogger<AppController> _logger;
 
         public AppController(ILogger<AppController> logger)
         {
             _logger = logger;
         }
-       
-        
-        private readonly ConvergenceContext _ctx;
 
-        public AppController(ConvergenceContext ctx)
+        private readonly IConvergenceRepository _repository;
+       
+
+        public AppController(IConvergenceRepository repository)
         {
-            _ctx = ctx;
+            _repository = repository;
         }
         public IActionResult Index()
         {
-            var results = _ctx.Devices.ToList();
+
             return View();
 
         }
-        
+        public IActionResult CompanyDevices()
+        {
+            var results = _repository.GetAllDevices();
+            return View(results);
+
+        }
+
     }
 }
