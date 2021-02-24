@@ -16,7 +16,7 @@ export class DevicesComponent implements AfterViewInit, OnInit {
   dataSource: DevicesDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'type'];
+  displayedColumns = ['id', 'name'];
 
   ngOnInit() {
     this.dataSource = new DevicesDataSource();

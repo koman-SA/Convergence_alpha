@@ -36,17 +36,13 @@ namespace Convergence
             
             services.AddTransient<ConvergenceSeeder>();
 
-            services.AddScoped<IConvergenceRepository, ConvergenceRepository>();
-
-            services.AddMvc();
-
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             /*services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)*/
             services.AddDefaultIdentity<ApplicationUser>(options => {
-              
+                bool test = true;
                 options.SignIn.RequireConfirmedAccount = true;
-                
+                test = false;
             })
 
             .AddEntityFrameworkStores<ConvergenceContext>();

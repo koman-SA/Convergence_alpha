@@ -8,8 +8,11 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 export interface DevicesItem {
   name: string;
   id: number;
+<<<<<<< HEAD
   type: string;
 
+=======
+>>>>>>> parent of 868c6a4 (JsonDataExtraction)
 }
 
 // TODO: replace this with real data from your application

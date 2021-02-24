@@ -28,6 +28,7 @@ namespace Convergence.Data
                 var filepath = Path.Combine(_hosting.ContentRootPath, "Data/art.json");
                 var json = File.ReadAllText(filepath);
                 var devices = JsonConvert.DeserializeObject<IEnumerable<Device>>(json);
+                var problems = devices.Where(x => x.Id == null).ToList();
                 _ctx.Devices.AddRange(devices);
 
 
