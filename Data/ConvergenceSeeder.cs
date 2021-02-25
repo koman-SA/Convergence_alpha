@@ -12,8 +12,8 @@ namespace Convergence.Data
     public class ConvergenceSeeder
     {
         private readonly ConvergenceContext _ctx;
-        private readonly IHostingEnvironment _hosting;
-        public ConvergenceSeeder(ConvergenceContext ctx, IHostingEnvironment hosting)
+        private readonly IWebHostEnvironment _hosting;
+        public ConvergenceSeeder(ConvergenceContext ctx, IWebHostEnvironment hosting)
         {
             _ctx = ctx;
             _hosting = hosting;
