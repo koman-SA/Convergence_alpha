@@ -12,11 +12,11 @@ import { DevicesDataSource, DevicesItem } from './devices-datasource';
 export class DevicesComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<DevicesItem>;
   dataSource: DevicesDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'name', 'type'];
+ 
 
   ngOnInit() {
     this.dataSource = new DevicesDataSource();
@@ -25,6 +25,6 @@ export class DevicesComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    /*this.table.dataSource = this.dataSource;*/
   }
 }

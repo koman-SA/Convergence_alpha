@@ -24,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatCardModule,
     MatMenuModule,
     MatPaginatorModule,
-
+    MatSortModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },

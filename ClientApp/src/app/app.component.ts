@@ -3,7 +3,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
+
 })
 export class AppComponent {
-  title = 'app';
+  userData: any = [
+    { id: "0", name: "Warren", type: "test" }
+  ];
+
+  constructor() {
+
+    console.log(this.userData);
+  }
+
 }
