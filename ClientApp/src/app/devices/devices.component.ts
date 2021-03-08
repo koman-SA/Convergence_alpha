@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-
+import { DevicesDataSource, DevicesItem } from './devices-datasource';
 
 @Component({
   selector: 'app-devices',
@@ -14,21 +14,21 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class DevicesComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<arrDevices>;
+  @ViewChild(MatTable) table: MatTable<DevicesItem>;
   
-  dataSource: any;
+  dataSource: DevicesDataSource;
 
  
   constructor(private httpService: HttpClient) { }
   arrDevices: string[];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'type'];
+ 
  
 
   ngOnInit() {
     
-    this.httpService.get('/assets/art.json').subscribe(
+    /*this.httpService.get('/assets/art.json').subscribe(
       data => {
         this.arrDevices = data as string[];	 // FILL THE ARRAY WITH DATA.
         //  console.log(this.arrBirds[1]);
@@ -36,8 +36,8 @@ export class DevicesComponent implements AfterViewInit, OnInit {
       (err: HttpErrorResponse) => {
         console.log(err.message);
       }
-    );
-    this.dataSource = this.arrDevices;
+    );*/
+    this.dataSource = new DevicesDataSource();
 
   }
 

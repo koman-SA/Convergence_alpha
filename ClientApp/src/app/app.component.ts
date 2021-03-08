@@ -8,13 +8,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 })
 export class AppComponent {
-  userData: any = [
-    { id: "0", name: "Warren", type: "test" }
-  ];
+  dataSource = [];
+  displayedColumns = ['id', 'name', 'type'];
 
   constructor() {
 
-    console.log(this.userData);
+    
   }
 
 }
