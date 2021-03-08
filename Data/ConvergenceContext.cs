@@ -23,18 +23,20 @@ namespace Convergence.Data
         }
 
         public DbSet<Device> Devices { get; set; }
+        public DbSet<Add> Adds { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Device>() 
-                .HasData(new Device()
+
+            modelBuilder.Entity<Add>()
+                .HasData(new Add()
                 {
                     Id = 1,
-                    Name = "Test",
-                    Type = "Desktop"
-                });
+                    DateAdded = DateTime.UtcNow,
+                    UniqueID = "123455"
+                }) ;
         }
 
     }

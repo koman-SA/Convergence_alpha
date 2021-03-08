@@ -24,9 +24,8 @@ const EXAMPLE_DATA: DevicesItem[] = [
 export class DevicesDataSource extends DataSource<DevicesItem> {
 
   data: DevicesItem[] = EXAMPLE_DATA;
-    sort: MatSort;
-    paginator: MatPaginator;
-    
+  paginator: MatPaginator;
+  sort: MatSort;
 
      
   constructor() {

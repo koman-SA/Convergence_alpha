@@ -1,5 +1,11 @@
 using Convergence.Data;
 using Convergence.Models;
+using Convergence.Data.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Convergence.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +41,10 @@ namespace Convergence
             });
             
             services.AddTransient<ConvergenceSeeder>();
+
+            services.AddScoped<IConvergenceRepository, ConvergenceRepository>();
+
+            services.AddMvc();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -96,7 +106,7 @@ namespace Convergence
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller=Default}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
 

@@ -17,8 +17,10 @@ namespace Convergence
         public static void Main(string[] args)
         {
             var host = BuildWebHost(args);
+
             SeedDb(host);
-           host.Run();
+
+            host.Run();
         }
         private static void SeedDb(IWebHost host)
         {

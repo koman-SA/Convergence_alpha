@@ -5,8 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
 
 using Convergence.Data;
+
+using Convergence.Services;
+
+using Convergence.ViewModels;
 
 
 namespace Convergence.Controllers
@@ -18,22 +23,20 @@ namespace Convergence.Controllers
     {
      
         private readonly ILogger<AppController> _logger;
-
-        public AppController(ILogger<AppController> logger)
-        {
-            _logger = logger;
-        }
-       
-        
         private readonly ConvergenceContext _ctx;
 
-        public AppController(ConvergenceContext ctx)
+        public AppController(ILogger<AppController> logger, ConvergenceContext ctx)
         {
+            _logger = logger;
             _ctx = ctx;
+
         }
+       
+    
         public IActionResult Index()
         {
             var results = _ctx.Devices.ToList();
+            
             return View();
 
         }

@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Convergence.Data;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Convergence.Data.Entities
 {
-    public class Device
+    public class AddItem
     {
         public int Id { get; set; }
-        public String Name { get; set; }
+        public Device Device { get; set; }
         public String Type { get; set; }
-        public DateTime AddedDate { get; set; }
-        public DateTime LastSeen { get; set; }
-        
+        public bool Active { get; set; }
+        public Add Add { get; set; }
+
 
 
     }

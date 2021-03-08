@@ -1,5 +1,6 @@
 ﻿using Convergence.Data.Entities;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,21 @@ namespace Convergence.Data
                 var filepath = Path.Combine(_hosting.ContentRootPath, "Data/art.json");
                 var json = File.ReadAllText(filepath);
                 var devices = JsonConvert.DeserializeObject<IEnumerable<Device>>(json);
-                var problems = devices.Where(x => x.Id == null).ToList();
                 _ctx.Devices.AddRange(devices);
 
+                var add = _ctx.Adds.Where(a => a.Id == 1).FirstOrDefault();
+                if( add !=null)
+                {
+                    add.Items = new List<AddItem>()
+                    {
+                        new AddItem()
+                        {
+                            Device = devices.First(),
+                            Type = devices.First().Type,
+                            Active = true
+                        }
+                    };
+                }
 
                 _ctx.SaveChanges();
             }
