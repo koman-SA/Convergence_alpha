@@ -1,40 +1,40 @@
 
-<div class="mat-elevation-z8 full-width-table" >
-  <mat-table #table [dataSource]="DeviceItems"  matSort aria-label="Elements">
-    
+<div class="mat-elevation-z8 full-width-table">
+  <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+
     <!-- Id Column -->
     <ng-container matColumnDef="id">
-      
+
       <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
-      
+
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
-      
+
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+
     </ng-container>
 
 
     <ng-container matColumnDef="type">
-      
+
       <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.type}}</mat-cell>
-      
+
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
+  </mat-table>
 
 
-      <mat-paginator #paginator
-                     [length]="dataSource?.data.length"
-                     [pageIndex]="0"
-                     [pageSize]="50"
-                     [pageSizeOptions]="[25, 50, 100, 250]">
-      </mat-paginator>
+  <mat-paginator #paginator
+                 [length]="dataSource?.data.length"
+                 [pageIndex]="0"
+                 [pageSize]="50"
+                 [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
 </div>
