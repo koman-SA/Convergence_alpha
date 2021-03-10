@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 })
 export class AppComponent {
-  dataSource = [];
-  displayedColumns = ['id', 'name', 'type'];
+  
 
   constructor() {
-
-    
   }
+
+
 
 }
