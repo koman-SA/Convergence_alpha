@@ -12,7 +12,6 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/common/http");
 var http_2 = require("@angular/common/http");
-var http_3 = require("@angular/common/http");
 var router_1 = require("@angular/router");
 var animations_1 = require("@angular/platform-browser/animations");
 var app_component_1 = require("./app.component");
@@ -52,8 +51,7 @@ var AppModule = /** @class */ (function () {
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
                 http_1.HttpClientModule,
                 forms_1.FormsModule,
-                http_2.HttpClient,
-                http_3.HttpErrorResponse,
+                http_2.HttpErrorResponse,
                 animations_1.BrowserAnimationsModule,
                 list_1.MatListModule,
                 sidenav_1.MatSidenavModule,

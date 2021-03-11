@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse } from '@angular/common/http';
+
+/*import { HttpErrorResponse } from '@angular/common/http';*/
 
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,9 +14,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-/*import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module;
+import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module;
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
-import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';*/
+import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -44,8 +44,8 @@ import { OwnerListComponent } from './owner/owner-list/owner-list.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    HttpClient,
-    HttpErrorResponse,
+    
+   /* HttpErrorResponse,*/
     BrowserAnimationsModule,
     MatListModule,
     MatSidenavModule,

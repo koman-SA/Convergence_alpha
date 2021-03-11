@@ -9,7 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppComponent = void 0;
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(http) {
+        this.http = http;
     }
     AppComponent = __decorate([
         core_1.Component({
