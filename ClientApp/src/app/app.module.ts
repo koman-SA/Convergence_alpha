@@ -14,7 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module;
+/*import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module;*/
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -27,7 +27,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { OwnerRoutingModule } from './owner/owner-routing/owner-routing.module';
-
+import { DevicesComponent } from './devices/devices.component';
 import { OwnerListComponent } from './owner/owner-list/owner-list.component';
 
 @NgModule({
@@ -38,6 +38,7 @@ import { OwnerListComponent } from './owner/owner-list/owner-list.component';
     HomeComponent,
     DashboardComponent,
     OwnerListComponent,
+    DevicesComponent,
   
   ],
   imports: [
@@ -64,6 +65,7 @@ import { OwnerListComponent } from './owner/owner-list/owner-list.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'Owner-List', component: OwnerListComponent },
+      { path: 'devices', component:DevicesComponent },
     
     ]),
     
