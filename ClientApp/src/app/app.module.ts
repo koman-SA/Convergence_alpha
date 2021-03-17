@@ -21,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -29,6 +30,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { OwnerRoutingModule } from './owner/owner-routing/owner-routing.module';
 import { DevicesComponent } from './devices/devices.component';
 import { OwnerListComponent } from './owner/owner-list/owner-list.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
  
@@ -45,7 +47,8 @@ import { OwnerListComponent } from './owner/owner-list/owner-list.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    
+    MatInputModule,
+    MatFormFieldModule,
    /* HttpErrorResponse,*/
     BrowserAnimationsModule,
     MatListModule,
