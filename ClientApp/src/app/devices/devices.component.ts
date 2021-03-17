@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table'
 import { StringLiteral } from 'typescript';
+import { DevicesService } from '../modules/devices.service';
 import { DevicesDataSource, DevicesItem } from './devices-datasource';
 
 
@@ -27,33 +28,19 @@ interface IDevice {
 })
 export class DevicesComponent implements OnInit {
   dataSource: MatTableDataSource<IDevice>;
-  devices: IDevice[];
+  devices: IDevice[]=[];
   columns: string[] = ['id', 'site', 'workstation', 'description', 'type', 'username', 'last_online']
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor() {
+  constructor(private devicesService: DevicesService) {
 
-    this.devices = [{
-      id: '1',
-      site: 'headoffice',
-      workstation: 'desktop01',
-      description: 'mydevice',
-      type: 'laptop',
-      username: 'eliasonw',
-      last_online: '2020-09-20 10:10:10'
-    },
-      {
-        id: '2',
-        site: 'headoffice',
-        workstation: 'desktop02',
-        description: 'mydevice',
-        type: 'laptop',
-        username: 'eliasonj',
-        last_online: '2020-09-20 10:10:10'
-
-      }];
-    this.dataSource = new MatTableDataSource(this.devices);
+    this.devices = [];
+    
+    this.devicesService.getDevices().then(response => {
+      this.devices = response.data;
+      this.dataSource = new MatTableDataSource(this.devices);
+    })
   }
   ngOnInit() {
     this.dataSource.sort = this.sort;

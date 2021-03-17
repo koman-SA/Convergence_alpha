@@ -1,0 +1,35 @@
+<mat-toolbar color="white">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span> APP LOGO </span>
+
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>    
+                    <button mat-icon-button>                   
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                </li>
+                <li>    
+                    <button mat-icon-button>                   
+                        <mat-icon>help-outline</mat-icon>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+      <div class="navbar-nav" *ngIf="isAuthenticated | async">
+        <a mat-button class="nav-link text-dark" [routerLink]='["/authentication/profile"]' title="Manage">Hello {{ userName | async }}</a>
+        <a mat-button class="nav-link text-dark" [routerLink]='["/authentication/logout"]' [state]='{ local: true }' title="Logout">Logout</a>
+      </div>
+
+      <div class="navbar-nav" *ngIf="!(isAuthenticated | async)">
+        <a mat-button class="nav-link text-dark" [routerLink]='["/authentication/register"]'>Register</a>
+        <a mat-button class="nav-link text-dark" [routerLink]='["/authentication/login"]'>Login</a>
+      </div>
+
+    </mat-toolbar-row>
+  </mat-toolbar>

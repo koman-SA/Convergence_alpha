@@ -31,6 +31,15 @@ var DevicesComponent = /** @class */ (function () {
                 type: 'laptop',
                 username: 'eliasonj',
                 last_online: '2020-09-20 10:10:10'
+            },
+            {
+                id: '3',
+                site: 'otheroffice',
+                workstation: 'desktop01',
+                description: 'my1device',
+                type: 'desktop',
+                username: 'eliasonw',
+                last_online: '2020-09-20 10:10:10'
             }];
         this.dataSource = new table_1.MatTableDataSource(this.devices);
     }

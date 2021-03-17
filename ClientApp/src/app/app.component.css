@@ -1,3 +1,16 @@
 .navbar-nav{
     text-align : right;
 }
+:host{
+
+    display: flex;
+    flex-direction:column;
+    height:100%;
+
+}
+mat-drawer{
+    width:350px;
+}
+mat-drawer-container{
+    height: 100%;
+}

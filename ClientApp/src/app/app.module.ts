@@ -31,6 +31,11 @@ import { OwnerRoutingModule } from './owner/owner-routing/owner-routing.module';
 import { DevicesComponent } from './devices/devices.component';
 import { OwnerListComponent } from './owner/owner-list/owner-list.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { DevicesService } from './modules/devices.service';
+import { SharedModule } from './shared/shared.module';
+import { MatDividerModule } from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
  
@@ -62,8 +67,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatMenuModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDividerModule,
     MatProgressSpinnerModule,
     OwnerRoutingModule,
+    SharedModule,
+    FlexLayoutModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
@@ -75,6 +83,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
    
   ],
   providers: [
+    DevicesService
     /*{ provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }*/
   ],
   bootstrap: [AppComponent]
