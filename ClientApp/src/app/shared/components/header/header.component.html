@@ -1,6 +1,6 @@
 <mat-toolbar color="white">
     <mat-toolbar-row>
-        <button mat-icon-button>
+        <button mat-icon-button [click]="toggleSideBar()">
             <mat-icon>menu</mat-icon>
         </button>
         <span> APP LOGO </span>
@@ -15,8 +15,18 @@
                 </li>
                 <li>    
                     <button mat-icon-button>                   
-                        <mat-icon>help-outline</mat-icon>
+                        <mat-icon>help</mat-icon>
                     </button>
+                </li>
+                <li>    
+                    <button mat-button [matMenuTriggerFor]="menu">                   
+                        <mat-icon>person</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon>exit-to-app</mat-icon>
+                            Sign Out</button>
+                    </mat-menu>
                 </li>
             </ul>
         </div>
