@@ -35,6 +35,7 @@ import { DevicesService } from './modules/devices.service';
 import { SharedModule } from './shared/shared.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DashboardService } from './modules/dashboard.service';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
    
   ],
   providers: [
-    DevicesService
+    DevicesService,
+    DashboardService
     /*{ provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }*/
   ],
   bootstrap: [AppComponent]
