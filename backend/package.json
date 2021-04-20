@@ -9,6 +9,14 @@
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "^4.16.4",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "open": "^8.0.5",
+    "request": "^2.88.2",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^1.0.6",
+    "nodemon": "^2.0.7"
   }
 }

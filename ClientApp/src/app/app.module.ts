@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { map } from 'rxjs/operators';
 /*import { HttpErrorResponse } from '@angular/common/http';*/
 
 import { RouterModule } from '@angular/router';
@@ -73,6 +73,7 @@ import { DashboardService } from './modules/dashboard.service';
     OwnerRoutingModule,
     SharedModule,
     FlexLayoutModule,
+    
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
@@ -86,6 +87,7 @@ import { DashboardService } from './modules/dashboard.service';
   providers: [
     DevicesService,
     DashboardService
+    
     /*{ provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }*/
   ],
   bootstrap: [AppComponent]

@@ -37,10 +37,10 @@ export class DevicesComponent implements OnInit {
 
     this.devices = [];
     
-    this.devicesService.getDevices().then(response => {
-      this.devices = response.data;
-      this.dataSource = new MatTableDataSource(this.devices);
-    })
+    this.devicesService.getDevices().subscribe((response => {
+      console.log('Api Respopnse is', response)
+      this.dataSource = new MatTableDataSource(this.devices)}
+    ))
   }
   ngOnInit() {
     this.dataSource.sort = this.sort;
