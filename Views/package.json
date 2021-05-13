@@ -1,0 +1,31 @@
+{
+    "name": "convergence",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build --prod",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "highcharts": "^9.0.1"
+
+    },
+    "devDependencies": {},
+    
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/koman-SA/Convergence_alpha.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/koman-SA/Convergence_alpha/issues"
+    },
+    "homepage": "https://github.com/koman-SA/Convergence_alpha#readme"
+}

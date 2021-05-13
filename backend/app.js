@@ -15,5 +15,4 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/devices', devicesRouter);
-console.log(devicesRouter);
 module.exports = app;
