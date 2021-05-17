@@ -13,6 +13,15 @@ namespace Convergence.ViewModels
      [Required]
      public string Type { get; set; }
 
+     public int SiteId { get; set; }
+
+     public DateTime AddedDate { get; set; }
+
+     public DateTime LastSeen { get; set; }
+
+     public string Username { get; set; }   
+       
+
     public ICollection<DeviceViewModel> Items { get; set; }
     }
 }

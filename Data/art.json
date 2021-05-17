@@ -1,12 +1,22 @@
 [
     {
-        "Id": 0,
+        "AddedDate": "2012-03-19T07:22Z",
+        "LastSeen": "2012-03-19T07:22Z",
+        "SiteId": 2,
+        "Username": "Testomg",
+        "DeviceId": 0,
         "Name": "Poster",
         "Type": "Self-portrait"
+
     },
     {
-        "Id": 1,
+        "AddedDate": "2012-03-19T07:22Z",
+        "LastSeen": "2012-03-19T07:22Z",
+        "SiteId": 2,
+        "Username": "Testomg",
+        "DeviceId": 1,
         "Name": "Poster",
         "Type": "Self-portrait"
+
     }
 ]

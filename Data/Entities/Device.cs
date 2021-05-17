@@ -9,7 +9,7 @@ namespace Convergence.Data.Entities
 {
     public class Device
     {
-        public int Id { get; set; }
+        public int DeviceId { get; set; }
         public int SiteId { get; set; }
         public String Username { get; set; } 
         public String Name { get; set; }

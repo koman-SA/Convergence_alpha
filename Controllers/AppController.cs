@@ -16,7 +16,7 @@ using Convergence.ViewModels;
 
 namespace Convergence.Controllers
 {
-    [Authorize]
+   // [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class AppController : Controller
