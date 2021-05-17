@@ -33,20 +33,6 @@ namespace Convergence.Data
                 var devices = JsonConvert.DeserializeObject<IEnumerable<Device>>(json);
                 _ctx.Devices.AddRange(devices);
 
-               /* var add = _ctx.AddId.Where(a => a.AddId == 1).FirstOrDefault();
-                if( add !=null)
-                {
-                    add.Items = new List<AddItem>()
-                    {
-                        new AddItem()
-                        {
-                            Device = devices.First(),
-                            Type = devices.First().Type,
-                            Active = true
-                        }
-                    };
-                }*/
-
                _ctx.SaveChanges();
             }
         }
