@@ -36,7 +36,7 @@ namespace Convergence.Controllers
         public IActionResult Test()
         {
            
-            return "Hello world";
+            return Ok();
 
         }
         
